@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="fight">
+      <div className="fight">Hello
         <div className="monster">
           {/* the width of the alien should be ten times whatever the alien size is in state */}
           <img src="alien.png" width={alienSize} />
