@@ -2,11 +2,11 @@ import './App.css';
 import VehicleList from './VehicleList';
 import TrafficLight from './TrafficLight';
 import { useState } from 'react';
-import Vehicle from './Vehicle';
 
 function App() {
   // track the following state with a few useState hooks:
   // lightColor should be a string that starts out as 'red'
+  const [lightColor, setLightColor] = useState('red');
   // lizardSize should be a number that starts out as 10
   const [lizardSize, setLizardSize] = useState(10);
   // alienSize should be a number that starts out as 10
@@ -33,7 +33,6 @@ function App() {
     vehicles.push('motorcycle');
     setVehicles(vehicles.slice());
   }
-  console.log('app', vehicles);
 
   return (
     <div className="App">
@@ -59,14 +58,15 @@ function App() {
           </div>
         </div>
       </div>
-      <TrafficLight />
+      <TrafficLight color={lightColor} />
       <div className="buttons">
         {/* when you click this button, the color of the light in state should be set to 'red' */}
-        <button>Red</button>
+        <button onClick={() => setLightColor('red')}>Red</button>
         {/* when you click this button, the color of the light in state should be set to 'yellow' */}
-        <button>Yellow</button>
+        <button onClick={() => setLightColor('yellow')}>Yellow</button>
         {/* when you click this button, the color of the light in state should be set to 'green' */}
-        <button>Green</button>
+        <button onClick={() => setLightColor('green')}>Green</button>
+
       </div>
       {/* 
       the VehicleList component takes in one prop: vehicles.
