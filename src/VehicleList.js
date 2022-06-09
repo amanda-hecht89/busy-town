@@ -1,6 +1,7 @@
 import Vehicle from './Vehicle';
 
-export default function VehicleList(vehicles) {
+export default function VehicleList({ vehicles }) {
+  console.log('vehicles', vehicles);
   return (
     <div className="traffic">
       {
